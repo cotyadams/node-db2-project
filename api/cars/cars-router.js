@@ -5,7 +5,7 @@ const { checkCarId, checkCarPayload, checkVinNumberUnique, checkVinNumberValid, 
 router.get('/', (req, res) => {
     getAll()
         .then((cars) => {
-        res.status(200).json(cars)
+        res.status(200).json([...cars])
         }).catch((err) => {
             res.status(500).json({
                 message: `Error getting all cars: ${err}`

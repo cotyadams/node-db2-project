@@ -3,7 +3,7 @@
 exports.up = function (knex) {
   // DO YOUR MAGIC
   return knex.schema.createTable('cars', table => {
-    table.increments('car_id').primary();
+    table.increments('id').primary();
     table.string('vin').notNullable();
     table.string('make').notNullable();
     table.string('model').notNullable();

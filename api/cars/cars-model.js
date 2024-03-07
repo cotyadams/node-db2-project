@@ -14,13 +14,13 @@ const getAll = () => {
 
 const getById = (id) => {
   // DO YOUR MAGIC
-  return db('cars').where('car_id', id)
+  return db('cars').where('id', id)
 }
 
 const create = async (car) => {
   // DO YOUR MAGIC
-  const carId = await db('cars').insert(car)
-  return await getById(carId[0])
+  const carId = await db('cars').insert(car).first()
+  return await getById(carId)
 }
 
 module.exports = {
